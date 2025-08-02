@@ -17,17 +17,14 @@
     color: #2c5aa0;      
 }
 
-.logo-text {
-    color: #222;         
-    font-weight: 700;
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1.6rem;         
-    margin: 0;
-    padding: 0;
+    gap: 2rem;         
+}
+
+.nav-link.active, .nav-link:hover {
+    color: #2c5aa0;
 }
 
 .nav-link {
@@ -36,10 +33,6 @@
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
-    padding: 0.5rem 0;
-    white-space: nowrap;
 }
 
-.nav-link.active, .nav-link:hover {
-    color: #2c5aa0;
-}
+
