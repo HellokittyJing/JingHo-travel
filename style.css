@@ -112,7 +112,7 @@
 }
 
 .tag-link:hover {
-    background: #2c5aa0;
+    background: #537bff;
     color: white;
 }
 
@@ -160,7 +160,7 @@
 .post-content h3 {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #244b8f;
+    color: #f208fe;
     margin-bottom: 0.7rem;
     letter-spacing: 1px;
 }
@@ -189,12 +189,12 @@
 }
 .read-more {
     align-self: flex-end;
-    color: #ea1f9f;
+    color: #e21898;
     font-weight: bold;
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.18s;
 }
 .read-more:hover {
-    color: #244b8f;
+    color: #11a7f1;
 }
