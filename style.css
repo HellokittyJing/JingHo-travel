@@ -116,10 +116,27 @@
     color: white;
 }
 
+.posts-grid {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .post-card {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px;
-    background: white;
-    border-radius: 15px;
+    width: 340px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+}
+.post-card:hover {
+    box-shadow: 0 8px 32px rgba(44, 90, 160, 0.16);
+    transform: translateY(-4px) scale(1.03);
 }
