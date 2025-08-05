@@ -154,11 +154,9 @@
 
 .post-image img[alt="東京美食"] {
     max-width: 80%;
-    height: auto;
+    height: 160px;
     object-fit: contain;
     display: block;
-    margin: 0 auto;
-    background: #fff;
 }
 
 .post-image img:hover {
