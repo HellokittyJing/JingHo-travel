@@ -154,7 +154,7 @@
 
 .post-image img[alt="東京美食"] {
     max-width: 100%;
-    height: 160px;
+    height: autox;
     object-fit: contain;
     display: block;
 }
