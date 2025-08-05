@@ -153,7 +153,7 @@
 }
 
 .post-image img[alt="東京美食"] {
-    transform: translateY(32px);
+     margin-top: 32px;
 }
 
 .post-image img:hover {
