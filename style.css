@@ -152,6 +152,10 @@
     transition: transform 0.3s ease;
 }
 
+.post-image img[alt="東京美食"] {
+    transform: translateY(32px);
+}
+
 .post-image img:hover {
     transform: scale(1.1);
 }
