@@ -117,46 +117,49 @@
 }
 
 .posts-grid {
-    display: flex;
+    display: grid;
     gap: 2rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+}
+
+.element.style {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 0.6s, transform 0.6s;
 }
 
 .post-card {
-    width: 340px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    background: white;
+    border-radius: 15px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.2s, transform 0.2s;
-    margin-bottom: 1rem;
-    border: 1px solid #eee;
-}
-.post-card:hover {
-    box-shadow: 0 8px 32px rgba(44, 90, 160, 0.16);
-    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post-card:hover {
     box-shadow: 0 8px 32px rgba(44, 90, 160, 0.16);
     transform: translateY(-4px) scale(1.03);
 }
+
+.post-image {
+    height: 250px;
+    overflow: hidden;
+}
+
 .post-image img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.3s ease;
 }
+
+.post-image img:hover {
+    transform: scale(1.1);
+}
+
 .post-content {
-    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 1.5rem;
 }
+
 .post-content h3 {
     font-size: 1.2rem;
     font-weight: 700;
@@ -164,37 +167,26 @@
     margin-bottom: 0.7rem;
     letter-spacing: 1px;
 }
+
 .post-meta {
+    margin-bottom: 1rem;
+    color: #666;
     font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 0.6rem;
 }
+
 .post-excerpt {
-    color: #555;
-    font-size: 1rem;
     margin-bottom: 1rem;
-    flex: 1;
+    color: #666;
+    line-height: 1.6;
 }
+
 .post-tags {
-    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;	 
 }
-.tag {
-    display: inline-block;
-    background: #eff3fb;
-    color: #285fad;
-    border-radius: 11px;
-    padding: 0.18em 0.9em;
-    margin-right: 0.5em;
-    font-size: 0.85em;
-}
-.read-more {
-    align-self: flex-end;
-    color: #e21898;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.18s;
-}
-.read-more:hover {
-    color: #11a7f1;
+ 
+.post-actions {
+    margin-top: 15px;
+    text-align: right;
 }
