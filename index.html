@@ -28,7 +28,7 @@
         <p>與我們一起踏上旅程，發現未知的風景和文化。</p>
         <button class="hero-btn" onclick="scrollToContent()">開始閱讀</button>
     </section>
-<main>
+<main  id="main-content">
       <div class="container">
         <div class="content-wrapper">
           <div class="posts">
@@ -136,6 +136,12 @@ let backToTopButton = document.getElementById('backToTop');
                 behavior: 'smooth'
             });
         });
+
+        function scrollToContent() {
+        document.getElementById('main-content').scrollIntoView({
+        behavior: 'smooth'
+        });
+}
     </script>
   
 </body>
