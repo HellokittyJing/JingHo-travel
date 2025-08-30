@@ -199,3 +199,12 @@
 }
 
 .container { max-width: 1200px; margin: 0px auto; padding: 0px 20px; }
+
+.tag {
+    color: rgb(44, 90, 160);
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgb(227, 242, 253);
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+}
