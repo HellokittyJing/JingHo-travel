@@ -132,7 +132,7 @@
             $('.tag-link').removeClass('active');
             $(this).addClass('active');
 
-             let tagText = $(this).text();
+            let tagText = $(this).text().split(' ')[0];
             if (tagText === '全部') {
                 $('.post-card').show();
             } else {
