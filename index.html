@@ -147,41 +147,6 @@
  
         });
  
-$.ajax({
-    url: 'tags.json',
-    method: 'GET',
-    dataType: 'json',
-    success: function(data) {
-        let html = '';
-
-            // 生成 tags
-            $.each(data.tagsList, function(index, item) {
-                if (item.tag === '全部') {
-                    html += '<a href="#" class="tag-link active">' + item.tag + '</a>';
-                } else {
-                    html += '<a href="#" class="tag-link">' + item.tag + ' (' + item.count + ')</a>';
-                }
-            });
-
-            // 用 html() 取代原本內容
-            $('.tags-cloud').html(html);
-
-            // 加上點擊事件 (事件代理，確保後續載入的 tag 也能生效)
-            $('.tags-cloud').on('click', '.tag-link', function(e) {
-                e.preventDefault();
-
-                // 先清掉其他 active
-                $('.tags-cloud .tag-link').removeClass('active');
-
-                // 再給自己加 active
-                $(this).addClass('active');
-            });
-        },
-        error: function(xhr, status, error) {
-            console.error('失敗：', error);
-        }
-    });
-
     </script>
   
 </body>
