@@ -147,6 +147,23 @@
  
         });
  
+            $.ajax({
+                    url: 'tags.json',
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        let html = '';
+                        $.each(data, function(i, item){
+                            if (item.tag == '全部')
+                                html += '<a href="#" class="tag-link active">全部</a>';
+                            else {
+                                html += '<a href="#" class="tag-link">' + item.tag + '(' + item.count + ')</a>';
+                            }
+                        });
+        
+                        $('.tags-cloud').append(html);
+                    }
+                });
     </script>
   
 </body>
