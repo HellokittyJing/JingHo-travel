@@ -120,60 +120,56 @@
         `;
         }
 
-            function assignEvent() {
-            $('.tag-link').off('click').on('click', function (e) {
+            $(document).on('click', '.tag-link', function (e) {
                 e.preventDefault();
 
                 $('.tag-link').removeClass('active');
                 $(this).addClass('active');
 
-                // 取得被點擊的文字，去掉尾巴的 (數字)
-                var tagText = $(this).text().replace(/\s*\(\d+\)\s*$/, '').trim();
+                let tagText = $(this).text();
 
-                // 與截圖一致：用 indexOf 判斷是否為「全部」
                 if (tagText.indexOf('全部') !== -1) {
-                $('.post-card').show();
+                    $('.post-card').show();
                 } else {
-                $('.post-card')
-                    .hide()
-                    .filter(function () {
-                    // 取出這張卡片所有 tag
-                    var tags = $(this)
-                        .find('.post-tags .tag')
-                        .map(function () { return $(this).text().trim(); })
-                        .get();
+                    $('.post-card')
+                        .hide()
+                        .filter(function () {
+                            var tags = $(this).find('.post-tags .tag').map(function () {
+                                return $(this).text();
+                            }).get();
 
-                    // 與截圖一致：for 迴圈 + indexOf 比對
-                    for (var i = 0; i < tags.length; i++) {
-                        if (tagText.indexOf(tags[i]) !== -1) {
-                        return true;
-                        }
-                    }
-                    return false;
-                    })
-                    .show();
+                            for (let i = 0; i < tags.length; i++) {
+                                if (tagText.indexOf(tags[i]) !== -1) {
+                                    return true;
+                                }
+                            }
+                            return false;
+                        })
+                        .show();
                 }
             });
-            }
- 
+
             $.ajax({
-                    url: 'tags.json',
-                    method: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        let html = '';
-                        $.each(data, function(i, item){
-                            if (item.tag == '全部')
-                                html += '<a href="#" class="tag-link active">全部</a>';
-                            else {
-                                html += '<a href="#" class="tag-link">' + item.tag + '(' + item.count + ')</a>';
-                            }
-                        });
-        
-                        $('.tags-cloud').append(html);
-                        assignEvent();
-                    }
-                });
+                url: 'tags.json',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var html = '';
+                    $.each(data, function (i, item) {
+                        if (item.tag === '全部') {
+                            html += '<a href="#" class="tag-link active">全部</a>';
+                        } else {
+                            html += '<a href="#" class="tag-link">' + item.tag + ' (' + item.count + ')</a>';
+                        }
+                    });
+
+                    $('.tags-cloud').html(html);
+                },
+                error: function (xhr, status, err) {
+                    console.error('載入 tags 失敗：', err);
+                }
+            });
+
     </script>
   
 </body>
